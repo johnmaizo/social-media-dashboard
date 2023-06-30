@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@layer components {
+    :root {
+        --height: 5px;
+    }
+    
+    .facebook_line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--height);
+        background-color: hsl(208, 92%, 53%);
+    }
+
+    .twitter_line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--height);
+        background-color: hsl(203, 89%, 53%);
+    }
+
+    .instagram_line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--height);
+        background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    }
+
+    .youtube_line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--height);
+        background-color: hsl(348, 97%, 39%);
+    }
+
+    /* Grid */
+    .grid_auto_fit {
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    }
+    
+    .grid_auto_fit_overview {
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    }
+    
+    .grid_auto_fit_overview_large {
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    }
+
+    /* For Button */
+    .button_theme_dark {
+        background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    }
+
+    .button_theme_light {
+        background: hsl(230, 22%, 74%);
+    }
+
+    .button_circle::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translate(-1.3em, -50%);
+        aspect-ratio: 1/1;
+        width: 1.1em;
+        background-color: #202740;
+        border-radius: 50%;
+        transition: transform 150ms ease-in-out;
+    }
+
+    .button_circle_light::before {
+        transform: translate(0.2em, -50%);
+    }
+
+    /* For Background */
+    .background_box::before {
+        --radius: 1.5em;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 15em;
+        z-index: -1;
+        border-radius: 0 0 var(--radius) var(--radius);
+
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .background_box_dark::before {
+        background-color: #20222F;
+    }
+
+    .background_box_light::before {
+        background-color: #F8F9FE;
+    }
+}
